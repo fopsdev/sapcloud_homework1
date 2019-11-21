@@ -1,9 +1,42 @@
-<mvc:View controllerName="itf.Homework1.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="itf.Homework1.controller.View1" displayBlock="true" id="View1">
 	<Shell id="shell">
 		<App id="app">
 			<pages>
 				<Page id="page" title="{i18n>title}">
-					<content></content>
+					<content>
+					    <Table noDataText="Drop column list items here and columns in the area above" items="{/Orders}" id="table0">
+					        <items>
+					            <ColumnListItem xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" type="Active" id="item0" press="action" action:wiring="\{'press':\{'navigation':\{'routeName':'Details_binded','keys':[\{'name':'DocEntry','type':'Edm.Int32'\}]\}\}\}">
+					                <cells>
+					                    <Text text="{DocEntry}" id="text2"/>
+					                    <Text text="{CardName}" id="text3"/>
+					                    <Text text="{DocTotal}{DocCurrency}" id="text4"/></cells>
+					            </ColumnListItem>
+					        </items>
+					        <columns>
+					            <Column id="column0">
+					                <header>
+					                    <Label text="DocEntry" id="label0"/>
+					                </header>
+					            </Column>
+					            <Column id="column1">
+					                <header>
+					                    <Label text="CardCode" id="label1"/>
+					                </header>
+					            </Column>
+					            <Column id="column2">
+					                <header>
+					                    <Label text="DocTotal" id="label2"/>
+					                </header>
+					            </Column></columns>
+					        <headerToolbar>
+					            <Toolbar width="100%" id="toolbar1">
+					                <content>
+					                    <SearchField xmlns="sap.m" placeholder="Search for ..." id="field0" search="onSearch"/>
+					                </content>
+					            </Toolbar>
+					        </headerToolbar></Table>
+					</content>
 				</Page>
 			</pages>
 		</App>

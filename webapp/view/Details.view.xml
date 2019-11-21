@@ -1,0 +1,20 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="itf.Homework1.controller.Details">
+	<App>
+		<pages>
+			<Page xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" title="Title" showNavButton="true" navButtonPress="action" action:wiring="\{'navButtonPress':\{'navigation':\{'routeName':'View1'\}\}\}">
+				<content>
+				    <ObjectHeader xmlns="sap.m" title="{CardCode}-{CardName}" number="{DocTotal}" numberUnit="{DocCurrency}" id="header0" intro="{DocEntry}">
+				        <statuses>
+				            <ObjectStatus text="Success" state="Success" id="status0"/>
+				            
+				        </statuses>
+				        <attributes>
+				            <ObjectAttribute text="10 units" id="attribute0"/>
+				            
+				        </attributes>
+				        </ObjectHeader>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

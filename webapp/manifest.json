@@ -93,7 +93,10 @@
 				"viewPath": "itf.Homework1.view",
 				"controlAggregation": "pages",
 				"controlId": "app",
-				"clearControlAggregation": false
+				"clearControlAggregation": false,
+				"bypassed": {
+					"target": []
+				}
 			},
 			"routes": [
 				{
@@ -102,15 +105,36 @@
 					"target": [
 						"TargetView1"
 					]
+				},
+				{
+					"name": "Details_binded",
+					"pattern": "Details/{DocEntry}",
+					"target": [
+						"Details"
+					]
+				},
+				{
+					"name": "View1",
+					"pattern": "View1",
+					"target": [
+						"TargetView1"
+					]
 				}
 			],
 			"targets": {
+				"Details": {
+					"viewType": "XML",
+					"viewName": "Details"
+				},
 				"TargetView1": {
 					"viewType": "XML",
-					"transition": "slide",
-					"clearControlAggregation": false,
-					"viewId": "View1",
 					"viewName": "View1"
+				}
+			},
+			"additionalData": {
+				"itf.Homework1.view.Details": {
+					"routeName": "Details_binded",
+					"entitySet": "/Orders"
 				}
 			}
 		}
